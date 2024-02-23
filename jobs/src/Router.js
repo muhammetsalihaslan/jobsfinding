@@ -10,7 +10,18 @@ const Router = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Jobs" component={JobsPage} />
+        <Stack.Screen
+          name="JobsPage"
+          options={{
+            title: 'Jobs',
+            headerTitleAlign: 'center',
+            headerTitleStyle: {
+              color: '#EF5350',
+              fontSize: 25,
+            },
+          }}
+          component={JobsPage}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
