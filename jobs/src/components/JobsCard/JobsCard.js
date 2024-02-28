@@ -1,10 +1,11 @@
 import React from 'react';
 import {Text, View} from 'react-native';
+import styles from './JobsCard.style';
 
-const JobsCard = () => {
+const JobsCard = ({jobs}) => {
   return (
-    <View>
-      <Text></Text>
+    <View style={styles.container}>
+      <Text>{jobs.name}</Text>
       <Text></Text>
       <Text></Text>
       <Text></Text>

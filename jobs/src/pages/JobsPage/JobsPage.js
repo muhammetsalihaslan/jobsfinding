@@ -1,13 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {FlatList, View} from 'react-native';
 import useFetch from '../../hooks/useFetch';
 import Loading from '../../components/Loading';
 import Error from '../../components/Error';
 import Config from 'react-native-config';
+import JobsCard from '../../components/JobsCard/JobsCard';
 
 const JobsPage = () => {
-  const [page, setPage] = useState(0);
-  const {data, error, loading} = useFetch(`${Config.API_URL}${page}`);
+  const [page, setPage] = useState(1);
+
+  const {data, error, loading} = useFetch(Config.API_URL + `${page}`);
+  console.log(data);
 
   if (error) {
     return <Error />;
@@ -17,9 +20,7 @@ const JobsPage = () => {
     return <Loading />;
   }
 
-  const renderJobs = () => (
-    
-  )
+  const renderJobs = ({item}) => <JobsCard jobs={item} />;
 
   return (
     <View>
