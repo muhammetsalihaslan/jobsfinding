@@ -7,10 +7,9 @@ import Config from 'react-native-config';
 import JobsCard from '../../components/JobsCard/JobsCard';
 
 const JobsPage = () => {
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
 
   const {data, error, loading} = useFetch(Config.API_URL + `${page}`);
-  console.log(data);
 
   if (error) {
     return <Error />;
