@@ -6,9 +6,9 @@ const JobsCard = ({jobs}) => {
   return (
     <View style={styles.container}>
       <Text>{jobs.name}</Text>
-      <Text></Text>
-      <Text></Text>
-      <Text></Text>
+      <Text>{jobs.company.name}</Text>
+      <Text>{jobs.locations[0].name}</Text>
+      <Text>{jobs.levels[0].name}</Text>
     </View>
   );
 };
