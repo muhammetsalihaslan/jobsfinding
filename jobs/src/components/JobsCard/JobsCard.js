@@ -8,10 +8,10 @@ const JobsCard = ({jobs}) => {
       <Text numberOfLines={1} style={styles.jobsname}>
         {jobs.name}
       </Text>
-      <Text>{jobs.company.name}</Text>
-      <Text>{jobs.locations[0].name}</Text>
+      <Text style={styles.companyName}>{jobs.company.name}</Text>
+      <Text style={styles.locationsName}>{jobs.locations[0].name}</Text>
       <View style={styles.innerContainer}>
-        <Text>{jobs.levels[0].name}</Text>
+        <Text style={styles.levelsName}>{jobs.levels[0].name}</Text>
       </View>
     </View>
   );
