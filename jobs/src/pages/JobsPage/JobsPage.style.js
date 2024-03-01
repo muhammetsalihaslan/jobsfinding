@@ -6,8 +6,11 @@ export default StyleSheet.create({
     flexDirection: 'column',
   },
   button: {
-    width: 100,
-    height: 100,
-    backgroundColor: 'red',
+    marginStart: 2,
+  },
+  button2: {},
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
 });

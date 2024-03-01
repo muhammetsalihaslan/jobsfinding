@@ -1,17 +1,19 @@
 import React, {useState} from 'react';
-import {Button, FlatList, View} from 'react-native';
+import {Button, FlatList, Text, TouchableOpacity, View} from 'react-native';
 import useFetch from '../../hooks/useFetch';
 import Loading from '../../components/Loading';
 import Error from '../../components/Error';
 import Config from 'react-native-config';
 import JobsCard from '../../components/JobsCard/JobsCard';
 import styles from './JobsPage.style';
+import CustomButton from '../../components/CustomButton/CustomButton';
 
 const JobsPage = () => {
   const [page, setPage] = useState(0);
-  const [showButton, setShowButton] = useState(false);
 
-  const {data, error, loading} = useFetch(Config.API_URL + `${page}`);
+  const {data, error, loading} = useFetch(Config.API_URL + `${page}`, page);
+
+  console.log(page);
 
   if (error) {
     return <Error />;
@@ -23,37 +25,22 @@ const JobsPage = () => {
 
   const renderJobs = ({item}) => <JobsCard jobs={item} />;
 
-  const handleEndReached = () => {
-    setShowButton(true);
-  };
+  const handleDown = () => setPage(page - 1);
 
-  const handleScroll = event => {
-    const offsetY = event.nativeEvent.contentOffset.y;
-    const scrollHeight = event.nativeEvent.contentSize.height;
-    const screenHeight = event.nativeEvent.layoutMeasurement.height;
-    const bottomOffset = scrollHeight - offsetY - screenHeight;
-
-    if (bottomOffset > 0.5) {
-      setShowButton(false);
-    } else {
-      setShowButton(true);
-    }
-  };
+  const handleUp = () => setPage(page + 1);
 
   return (
     <View style={styles.container}>
       <FlatList
         data={data.results}
         renderItem={renderJobs}
-        onEndReached={handleEndReached}
-        onScroll={handleScroll}
-        scrollEventThrottle={16}
+        ListFooterComponent={() => (
+          <View style={styles.buttonContainer}>
+            <CustomButton title="down" onPress={handleDown} />
+            <CustomButton title="up" onPress={handleUp} />
+          </View>
+        )}
       />
-      {showButton && (
-        <View style={styles.buttonContainer}>
-          <Button title="Press me" style={styles.button} />
-        </View>
-      )}
     </View>
   );
 };
