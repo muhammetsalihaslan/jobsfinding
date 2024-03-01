@@ -25,7 +25,9 @@ const JobsPage = () => {
 
   const renderJobs = ({item}) => <JobsCard jobs={item} />;
 
-  const handleDown = () => setPage(page - 1);
+  const handleDown = () => {
+    page === 0 ? '' : setPage(page - 1);
+  };
 
   const handleUp = () => setPage(page + 1);
 
