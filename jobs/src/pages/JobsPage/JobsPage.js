@@ -23,7 +23,9 @@ const JobsPage = () => {
     return <Loading />;
   }
 
-  const renderJobs = ({item}) => <JobsCard jobs={item} />;
+  const handlePress = () => {};
+
+  const renderJobs = ({item}) => <JobsCard jobs={item} onPress={handlePress} />;
 
   const handleDown = () => {
     page === 0 ? '' : setPage(page - 1);

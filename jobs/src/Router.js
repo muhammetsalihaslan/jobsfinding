@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 
 import JobsPage from './pages/JobsPage';
+import DetailPage from './pages/DetailPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,7 @@ const Router = () => {
           }}
           component={JobsPage}
         />
+        <Stack.Screen name="DetailPage" component={DetailPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
