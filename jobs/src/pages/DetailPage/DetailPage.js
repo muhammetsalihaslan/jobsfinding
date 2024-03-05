@@ -17,8 +17,8 @@ const DetailPage = () => {
         </View>
         <Text style={styles.job}>Job Detail</Text>
       </View>
-      <View>
-        <Text>
+      <View style={styles.body}>
+        <Text style={styles.bodyText}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
           maiores eius impedit voluptates placeat soluta labore, inventore
           fugiat non nobis quam, provident consequuntur eligendi velit. Iusto
@@ -27,12 +27,12 @@ const DetailPage = () => {
           vel deleniti nemo distinctio veniam?
         </Text>
       </View>
-      <View>
-        <TouchableOpacity>
-          <Text>Submit</Text>
+      <View style={styles.button}>
+        <TouchableOpacity style={styles.button1}>
+          <Text style={styles.button1Text}>Submit</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
-          <Text>Favorite Job</Text>
+        <TouchableOpacity style={styles.button2}>
+          <Text style={styles.button2Text}>Favorite Job</Text>
         </TouchableOpacity>
       </View>
     </View>
