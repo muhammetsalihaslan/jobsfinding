@@ -11,11 +11,11 @@ const DetailPage = () => {
           <Text style={styles.location1}>Location:</Text>
           <Text style={styles.location2}> Paris, France</Text>
         </View>
-        <View>
-          <Text>Job Level</Text>
-          <Text>Mid Level</Text>
+        <View style={styles.level}>
+          <Text style={styles.level1}>Job Level:</Text>
+          <Text style={styles.level2}> Mid Level</Text>
         </View>
-        <Text>Job Detail</Text>
+        <Text style={styles.job}>Job Detail</Text>
       </View>
       <View>
         <Text>

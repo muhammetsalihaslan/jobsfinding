@@ -10,7 +10,7 @@ export default StyleSheet.create({
   },
   firstHead: {
     fontSize: 22,
-    color: 'black',
+    color: '#37474F',
     fontWeight: 'bold',
   },
   location: {
@@ -26,5 +26,24 @@ export default StyleSheet.create({
     fontSize: 15,
     color: 'black',
     fontWeight: 'bold',
+  },
+  level: {
+    flexDirection: 'row',
+    marginTop: 5,
+  },
+  level1: {
+    color: '#EF5350',
+    fontWeight: 'bold',
+    fontSize: 15,
+  },
+  level2: {
+    fontSize: 15,
+    color: 'black',
+    fontWeight: 'bold',
+  },
+  job: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#37474F',
   },
 });
