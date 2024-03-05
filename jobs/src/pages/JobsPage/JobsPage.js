@@ -8,12 +8,10 @@ import JobsCard from '../../components/JobsCard/JobsCard';
 import styles from './JobsPage.style';
 import CustomButton from '../../components/CustomButton/CustomButton';
 
-const JobsPage = () => {
+const JobsPage = ({navigation}) => {
   const [page, setPage] = useState(0);
 
   const {data, error, loading} = useFetch(Config.API_URL + `${page}`, page);
-
-  console.log(page);
 
   if (error) {
     return <Error />;
@@ -23,9 +21,13 @@ const JobsPage = () => {
     return <Loading />;
   }
 
-  const handlePress = () => {};
+  const handleSelectId = id => {
+    navigation.navigate('DetailPage', {id});
+  };
 
-  const renderJobs = ({item}) => <JobsCard jobs={item} onPress={handlePress} />;
+  const renderJobs = ({item}) => (
+    <JobsCard jobs={item} onSelect={() => handleSelectId(item.id)} />
+  );
 
   const handleDown = () => {
     page === 0 ? '' : setPage(page - 1);

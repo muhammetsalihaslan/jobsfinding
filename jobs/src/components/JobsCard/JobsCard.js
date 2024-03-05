@@ -2,9 +2,9 @@ import React from 'react';
 import {Text, TouchableWithoutFeedback, View} from 'react-native';
 import styles from './JobsCard.style';
 
-const JobsCard = ({jobs, onPress}) => {
+const JobsCard = ({jobs, onSelect}) => {
   return (
-    <TouchableWithoutFeedback onPress={onPress}>
+    <TouchableWithoutFeedback onPress={onSelect}>
       <View style={styles.container}>
         <Text numberOfLines={1} style={styles.jobsname}>
           {jobs.name}
