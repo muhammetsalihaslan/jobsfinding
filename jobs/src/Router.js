@@ -23,7 +23,17 @@ const Router = () => {
           }}
           component={JobsPage}
         />
-        <Stack.Screen name="DetailPage" component={DetailPage} />
+        <Stack.Screen
+          name="DetailPage"
+          component={DetailPage}
+          options={{
+            headerTitleAlign: 'center',
+            headerTitleStyle: {
+              color: '#EF5350',
+              fontSize: 20,
+            },
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
