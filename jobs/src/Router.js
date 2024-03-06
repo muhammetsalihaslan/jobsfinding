@@ -26,13 +26,14 @@ const Router = () => {
         <Stack.Screen
           name="DetailPage"
           component={DetailPage}
-          options={{
+          options={({route}) => ({
+            title: route.params.item.name,
             headerTitleAlign: 'center',
             headerTitleStyle: {
               color: '#EF5350',
               fontSize: 20,
             },
-          }}
+          })}
         />
       </Stack.Navigator>
     </NavigationContainer>

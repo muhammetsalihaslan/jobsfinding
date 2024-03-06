@@ -60,6 +60,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     marginStart: 15,
     marginTop: 10,
+    marginBottom: 10,
   },
   button1: {
     width: 170,
