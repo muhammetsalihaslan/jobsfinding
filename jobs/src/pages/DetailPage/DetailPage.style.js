@@ -48,15 +48,13 @@ export default StyleSheet.create({
     marginTop: 10,
     textAlign: 'center',
   },
-  body: {
+
+  bodyText: {
+    padding: 1,
     backgroundColor: 'white',
     borderWidth: 1,
     borderColor: 'grey',
     margin: 1,
-  },
-  bodyText: {
-    padding: 1,
-    marginStart: 1,
   },
   button: {
     flexDirection: 'row',
