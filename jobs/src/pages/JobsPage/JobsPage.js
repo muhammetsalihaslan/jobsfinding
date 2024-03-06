@@ -21,12 +21,12 @@ const JobsPage = ({navigation}) => {
     return <Loading />;
   }
 
-  const handleSelectId = id => {
-    navigation.navigate('DetailPage', {id});
+  const handleSelect = item => {
+    navigation.navigate('DetailPage', {item});
   };
 
   const renderJobs = ({item}) => (
-    <JobsCard jobs={item} onSelect={() => handleSelectId(item.id)} />
+    <JobsCard jobs={item} handlePress={() => handleSelect(item)} />
   );
 
   const handleDown = () => {

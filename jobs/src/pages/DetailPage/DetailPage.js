@@ -1,31 +1,29 @@
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import styles from './DetailPage.style';
+import useFetch from '../../hooks/useFetch';
+import Config from 'react-native-config';
+import RenderHTML from 'react-native-render-html';
 
-const DetailPage = () => {
+const DetailPage = ({route}) => {
+  const jobs = route.params.item;
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.firstHead}>Implementation Consultant</Text>
+        <Text style={styles.firstHead}>{jobs.name}</Text>
         <View style={styles.location}>
           <Text style={styles.location1}>Location:</Text>
-          <Text style={styles.location2}> Paris, France</Text>
+          <Text style={styles.location2}> {jobs.locations[0].name}</Text>
         </View>
         <View style={styles.level}>
           <Text style={styles.level1}>Job Level:</Text>
-          <Text style={styles.level2}> Mid Level</Text>
+          <Text style={styles.level2}> {jobs.levels[0].name}</Text>
         </View>
         <Text style={styles.job}>Job Detail</Text>
       </View>
       <View style={styles.body}>
-        <Text style={styles.bodyText}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-          maiores eius impedit voluptates placeat soluta labore, inventore
-          fugiat non nobis quam, provident consequuntur eligendi velit. Iusto
-          aut saepe nihil dicta ipsam accusantium quam quis dolores doloremque
-          vero consectetur sit, molestias amet aperiam excepturi nulla, atque
-          vel deleniti nemo distinctio veniam?
-        </Text>
+        <RenderHTML baseStyle={styles.bodyText} />
       </View>
       <View style={styles.button}>
         <TouchableOpacity style={styles.button1}>
