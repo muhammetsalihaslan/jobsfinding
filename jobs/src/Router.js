@@ -4,39 +4,43 @@ import React from 'react';
 
 import JobsPage from './pages/JobsPage';
 import DetailPage from './pages/DetailPage';
+import {Provider} from 'react-redux';
+import {store} from './context/store';
 
 const Stack = createNativeStackNavigator();
 
 const Router = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="JobsPage"
-          options={{
-            title: 'Jobs',
-            headerTitleAlign: 'center',
-            headerTitleStyle: {
-              color: '#EF5350',
-              fontSize: 25,
-            },
-          }}
-          component={JobsPage}
-        />
-        <Stack.Screen
-          name="DetailPage"
-          component={DetailPage}
-          options={({route}) => ({
-            title: route.params.item.name,
-            headerTitleAlign: 'center',
-            headerTitleStyle: {
-              color: '#EF5350',
-              fontSize: 20,
-            },
-          })}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="JobsPage"
+            options={{
+              title: 'Jobs',
+              headerTitleAlign: 'center',
+              headerTitleStyle: {
+                color: '#EF5350',
+                fontSize: 25,
+              },
+            }}
+            component={JobsPage}
+          />
+          <Stack.Screen
+            name="DetailPage"
+            component={DetailPage}
+            options={({route}) => ({
+              title: route.params.item.name,
+              headerTitleAlign: 'center',
+              headerTitleStyle: {
+                color: '#EF5350',
+                fontSize: 20,
+              },
+            })}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 };
 
