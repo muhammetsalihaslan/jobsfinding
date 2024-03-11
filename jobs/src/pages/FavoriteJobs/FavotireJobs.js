@@ -16,11 +16,7 @@ const FavoriteJobs = () => {
 
   return (
     <View style={styles.container}>
-      <FlatList
-        data={}
-        renderItem={renderJobs}
-        ListFooterComponent={() => <View style={styles.buttonContainer}></View>}
-      />
+      <FlatList />
     </View>
   );
 };
