@@ -22,7 +22,17 @@ const DrawerNavigation = () => {
           },
         }}
       />
-      <Drawer.Screen name="Favorite JOB" component={FavoriteJobs} />
+      <Drawer.Screen
+        name="FavoriteJobs"
+        component={FavoriteJobs}
+        options={{
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+            color: '#EF5350',
+            fontSize: 25,
+          },
+        }}
+      />
     </Drawer.Navigator>
   );
 };

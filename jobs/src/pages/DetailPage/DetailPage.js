@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Alert,
   Dimensions,
   ScrollView,
   Text,
@@ -8,9 +9,21 @@ import {
 } from 'react-native';
 import styles from './DetailPage.style';
 import RenderHTML from 'react-native-render-html';
+import {useDispatch, useSelector} from 'react-redux';
+import {addFavorite} from '../../context/reducers';
 
-const DetailPage = ({route}) => {
+const DetailPage = ({route, navigation}) => {
+  const dispatch = useDispatch();
   const jobs = route.params.item;
+  const favoriteJobs = useSelector(state => state.favorite.favoriteJobs);
+
+  const handleAddToFavorite = jobs => {
+    if (favoriteJobs.find(item => item.id === jobs.id)) {
+      return Alert.alert('This job already added...');
+    }
+    dispatch(addFavorite(jobs));
+    navigation.navigate('FavoriteJobs');
+  };
 
   return (
     <ScrollView style={styles.container}>
@@ -37,7 +50,9 @@ const DetailPage = ({route}) => {
         <TouchableOpacity style={styles.button1}>
           <Text style={styles.button1Text}>Submit</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button2}>
+        <TouchableOpacity
+          style={styles.button2}
+          onPress={() => handleAddToFavorite(jobs)}>
           <Text style={styles.button2Text}>Favorite Job</Text>
         </TouchableOpacity>
       </View>
