@@ -13,7 +13,14 @@ const DrawerNavigation = () => {
       <Drawer.Screen
         name="StackNavigation"
         component={StackNavigation}
-        options={{headerShown: false, title: 'Jobs'}}
+        options={{
+          title: 'Jobs',
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+            color: '#EF5350',
+            fontSize: 25,
+          },
+        }}
       />
       <Drawer.Screen name="Favorite JOB" component={FavoriteJobs} />
     </Drawer.Navigator>
