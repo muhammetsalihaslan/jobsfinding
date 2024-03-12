@@ -7,8 +7,14 @@ const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
   return (
-    <Drawer.Navigator>
-      <Drawer.Screen name="StackNavigation" component={StackNavigation} />
+    <Drawer.Navigator
+      initialRouteName="StackNavigation"
+      screenOptions={{drawerActiveTintColor: '#ef5350'}}>
+      <Drawer.Screen
+        name="StackNavigation"
+        component={StackNavigation}
+        options={{headerShown: false, title: 'Jobs'}}
+      />
       <Drawer.Screen name="Favorite JOB" component={FavoriteJobs} />
     </Drawer.Navigator>
   );

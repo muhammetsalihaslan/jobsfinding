@@ -2,6 +2,7 @@ import React from 'react';
 import {FlatList, View} from 'react-native';
 import Loading from '../../components/Loading';
 import Error from '../../components/Error';
+import useFetch from '../../hooks/useFetch';
 
 const FavoriteJobs = () => {
   const {error, loading} = useFetch();
