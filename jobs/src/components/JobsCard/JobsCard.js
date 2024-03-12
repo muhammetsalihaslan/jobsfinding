@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, TouchableWithoutFeedback, View} from 'react-native';
 import styles from './JobsCard.style';
 
-const JobsCard = ({jobs, handlePress}) => {
+const JobsCard = ({jobs, handlePress, remove}) => {
   return (
     <TouchableWithoutFeedback onPress={handlePress}>
       <View style={styles.container}>

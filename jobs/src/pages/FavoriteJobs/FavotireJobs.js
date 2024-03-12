@@ -15,7 +15,7 @@ const FavoriteJobs = () => {
     return <Loading />;
   }
 
-  const renderFavoriteJobs = ({item}) => <JobsCard jobs={item} />;
+  const renderFavoriteJobs = ({item}) => <JobsCard jobs={item} remove />;
 
   return (
     <View style={styles.container}>
