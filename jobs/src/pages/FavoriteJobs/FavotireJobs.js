@@ -20,7 +20,7 @@ const FavoriteJobs = () => {
   return (
     <View style={styles.container}>
       {favoriteJobs.length === 0 ? (
-        <View style={styles.container}>
+        <View style={styles.container2}>
           <Text style={styles.text}>You don't have any favourite job yet!</Text>
         </View>
       ) : (

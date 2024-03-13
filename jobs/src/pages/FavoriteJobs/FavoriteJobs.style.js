@@ -5,12 +5,10 @@ export default StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
   },
-  button: {
-    marginStart: 2,
-  },
-  button2: {},
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
+  container2: {},
+  text: {
+    textAlign: 'center',
+    fontSize: 25,
+    fontWeight: 'bold',
   },
 });
