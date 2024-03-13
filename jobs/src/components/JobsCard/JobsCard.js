@@ -1,5 +1,10 @@
 import React from 'react';
-import {Text, TouchableWithoutFeedback, View} from 'react-native';
+import {
+  Text,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 import styles from './JobsCard.style';
 
 const JobsCard = ({jobs, handlePress, remove}) => {
@@ -14,6 +19,11 @@ const JobsCard = ({jobs, handlePress, remove}) => {
         <View style={styles.innerContainer}>
           <Text style={styles.levelsName}>{jobs.levels[0].name}</Text>
         </View>
+        {remove && (
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Submit</Text>
+          </TouchableOpacity>
+        )}
       </View>
     </TouchableWithoutFeedback>
   );

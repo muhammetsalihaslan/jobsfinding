@@ -41,4 +41,17 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
   },
+  button: {
+    backgroundColor: '#EF5350',
+
+    margin: 10,
+    borderRadius: 10,
+  },
+  buttonText: {
+    fontSize: 25,
+    textAlign: 'center',
+    color: 'white',
+    justifyContent: 'center',
+    fontWeight: 'bold',
+  },
 });
