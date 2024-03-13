@@ -21,7 +21,7 @@ const JobsCard = ({jobs, handlePress, remove}) => {
         </View>
         {remove && (
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Submit</Text>
+            <Text style={styles.buttonText}>Remove</Text>
           </TouchableOpacity>
         )}
       </View>
