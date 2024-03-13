@@ -6,8 +6,16 @@ import {
   View,
 } from 'react-native';
 import styles from './JobsCard.style';
+import {useDispatch} from 'react-redux';
+import {removeJob} from '../../context/reducers';
 
 const JobsCard = ({jobs, handlePress, remove}) => {
+  const dispatch = useDispatch();
+
+  const handleRemove = () => {
+    dispatch(removeJob(jobs));
+  };
+
   return (
     <TouchableWithoutFeedback onPress={handlePress}>
       <View style={styles.container}>
@@ -20,7 +28,7 @@ const JobsCard = ({jobs, handlePress, remove}) => {
           <Text style={styles.levelsName}>{jobs.levels[0].name}</Text>
         </View>
         {remove && (
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={handleRemove}>
             <Text style={styles.buttonText}>Remove</Text>
           </TouchableOpacity>
         )}
